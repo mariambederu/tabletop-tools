@@ -6,8 +6,14 @@
  * @returns {boolean} whether the wizard can cast the spell
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
-  // TODO
+  // TODO 
+  // OR (||) 
+  return isSpellPrepared || hasScroll;
 }
+console.log(canCastSpell(true, false)); 
+console.log(canCastSpell(false, true));  
+console.log(canCastSpell(true, true));   
+console.log(canCastSpell(false, false)); //when both is false it returns false b/c not prepared also have no scroll 
 
 /**
  * A creature is hidden from an observer if it is actively hiding
@@ -18,7 +24,12 @@ function canCastSpell(isSpellPrepared, hasScroll) {
  */
 function isHidden(hiding, aware) {
   // TODO
+  return hiding !== aware;
 }
+console.log(isHidden(true, false));
+console.log(isHidden(false, true));
+console.log(isHidden(true, true));
+console.log(isHidden(false, false));
 
 /**
  * A strike hits if the attack value is greater than or equal
@@ -29,7 +40,13 @@ function isHidden(hiding, aware) {
  */
 function doesStrikeHit(attack, ac) {
   // TODO
+  return attack >= ac;
 }
+
+console.log(doesStrikeHit(15, 10));
+console.log(doesStrikeHit(10, 15));
+console.log(doesStrikeHit(15, 15));
+console.log(doesStrikeHit(10, 10));
 
 /**
  * A strike is a critical hit if the attack value is at least
@@ -40,7 +57,13 @@ function doesStrikeHit(attack, ac) {
  */
 function doesStrikeCrit(attack, ac) {
   // TODO
+  return attack >= ac + 10;
 }
+
+console.log(doesStrikeCrit(15, 5));
+console.log(doesStrikeCrit(5, 15));
+console.log(doesStrikeCrit(15, 15));
+console.log(doesStrikeCrit(5, 5));
 
 /**
  * A creature can restore hit points (HP) by healing,
