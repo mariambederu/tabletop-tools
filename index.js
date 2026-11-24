@@ -75,7 +75,13 @@ console.log(doesStrikeCrit(5, 5));
  */
 function heal(maxHp, currentHp, healAmount) {
   // TODO
+  return maxHp >= currentHp + healAmount;
 }
+
+console.log(heal(25, 10, 15));
+console.log(heal(25, 15, 10));
+console.log(heal(25, 15, 15));
+console.log(heal(25, 10, 10));
 
 /**
  * When a character uses a skill they have proficiency in,
@@ -95,7 +101,14 @@ function heal(maxHp, currentHp, healAmount) {
  */
 function getProficiencyBonus(level, rank) {
   // TODO
+  return level + rank;
 }
+
+console.log(getProficiencyBonus (0, 0));
+console.log(getProficiencyBonus(0, 2));
+console.log(getProficiencyBonus(0, 4));
+console.log(getProficiencyBonus(0, 6));
+console.log(getProficiencyBonus(0, 8));
 
 /**
  * A creature can get a bonus to its armor class (AC) by taking cover.
@@ -109,6 +122,7 @@ function getProficiencyBonus(level, rank) {
  */
 function getCoverBonus(behindObstacle, takingCover) {
   // TODO
+  return behindObstacle > takingCover;
 }
 
 /**
